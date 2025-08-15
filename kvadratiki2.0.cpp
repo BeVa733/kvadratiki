@@ -15,12 +15,12 @@ int main(void)
     double sol_2 = 0;
     int need_for_repetition = 1;
     int check_correctness_input, type_of_output;
-    printf("Эта программа решает уравнения вида ax^2+bx+c=0\n");
+    printf("Р­С‚Р° РїСЂРѕРіСЂР°РјРјР° СЂРµС€Р°РµС‚ СѓСЂР°РІРЅРµРЅРёСЏ РІРёРґР° ax^2+bx+c=0\n");
 
     do
     {
         check_correctness_input = 1;
-        printf("Введите параметры уравнения:\n");
+        printf("Р’РІРµРґРёС‚Рµ РїР°СЂР°РјРµС‚СЂС‹ СѓСЂР°РІРЅРµРЅРёСЏ:\n");
         check_correctness_input = input_coefficients(&coefficient_a, &coefficient_b, &coefficient_c);
 
         if (check_correctness_input == 1)
@@ -30,7 +30,7 @@ int main(void)
 
         output_received_solution(sol_1, sol_2, type_of_output);
 
-        printf("Если хотите решить еще одно уравнение введите 1, для завершения программы введите 0\n");
+        printf("Р•СЃР»Рё С…РѕС‚РёС‚Рµ СЂРµС€РёС‚СЊ РµС‰Рµ РѕРґРЅРѕ СѓСЂР°РІРЅРµРЅРёРµ РІРІРµРґРёС‚Рµ 1, РґР»СЏ Р·Р°РІРµСЂС€РµРЅРёСЏ РїСЂРѕРіСЂР°РјРјС‹ РІРІРµРґРёС‚Рµ 0\n");
         scanf("%d", &need_for_repetition);
     }while(need_for_repetition);
 
@@ -115,25 +115,26 @@ void output_received_solution (double sol_1, double sol_2, int type_of_output)
     switch(type_of_output)
     {
         case -1:
-            printf("Введены некорректные коэффициены\n");
+            printf("Р’РІРµРґРµРЅС‹ РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Рµ РєРѕСЌС„С„РёС†РёРµРЅС‹\n");
             break;
         case 0:
-            printf("Это уравнение имеет бесконечное количество решений\n");
+            printf("Р­С‚Рѕ СѓСЂР°РІРЅРµРЅРёРµ РёРјРµРµС‚ Р±РµСЃРєРѕРЅРµС‡РЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂРµС€РµРЅРёР№\n");
             break;
         case 1:
         case 3:
-            printf("это уравнение не имеет решений\n");
+            printf("СЌС‚Рѕ СѓСЂР°РІРЅРµРЅРёРµ РЅРµ РёРјРµРµС‚ СЂРµС€РµРЅРёР№\n");
             break;
         case 2:
         case 4:
-            printf("Это уравнение имеет одно решение %.2f\n", sol_1);
+            printf("Р­С‚Рѕ СѓСЂР°РІРЅРµРЅРёРµ РёРјРµРµС‚ РѕРґРЅРѕ СЂРµС€РµРЅРёРµ %.2f\n", sol_1);
             break;
 
         case 5:
-            printf("Это уравнение имеет 2 решения x=%.2f и x=%.2f\n", sol_1, sol_2);
+            printf("Р­С‚Рѕ СѓСЂР°РІРЅРµРЅРёРµ РёРјРµРµС‚ 2 СЂРµС€РµРЅРёСЏ x=%.2f Рё x=%.2f\n", sol_1, sol_2);
             break;
         default:
-            printf("Что-то поломалось.....\n");
+            printf("Р§С‚Рѕ-С‚Рѕ РїРѕР»РѕРјР°Р»РѕСЃСЊ.....\n");
             break;
     }
 }
+
