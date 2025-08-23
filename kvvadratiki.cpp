@@ -73,17 +73,11 @@ int main()
 
 int input_coefficients(double coefficients[])
 {
-    
+
     bool is_correctness_input = true;
 
     printf("Введите параметры уравнения:\n");
-    printf("a= ");
-
-    if (scanf("%lf", &coefficients[A]) != 1)
-    {
-        is_correctness_input = false;
-        cleaning_buffer();
-    }
+    scan_coeff('a', A)
 
     else
     {
@@ -174,7 +168,7 @@ enum possible_outcomes solve_square_equation(double coefficients[], double solut
     assert(!isnan(float (coefficients[C])));
     assert(!isnan(float (solutions[0])));
     assert(!isnan(float (solutions[1])));
-    
+
     double D = coefficients[B] * coefficients[B] - 4 * coefficients[A] * coefficients[C];
 
     if (D < 0)
