@@ -10,6 +10,7 @@ int main()
     double coefficients[3] = {NAN, NAN, NAN};
     double solutions[2] = {NAN, NAN};
     enum possible_outcomes type_output = INCORRECT_INPUT;
+    enum possible_outcomes n_roots = INCORRECT_INPUT;
     bool need_repetition = true;
     bool is_correctness_input = true;
 
@@ -24,10 +25,15 @@ int main()
         is_correctness_input = input_coefficients(coefficients);
 
         if (is_correctness_input)
-            type_output = solve_equation(coefficients, solutions);
+        {
+            n_roots = solve_equation(coefficients, solutions);
+            type_output = n_roots;
+        }
 
         else
+        {
             type_output = INCORRECT_INPUT;
+        }
 
         output_received_solution(solutions, type_output);
 
