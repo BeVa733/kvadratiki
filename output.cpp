@@ -62,8 +62,10 @@ bool get_users_answer (void)
             return true;
 
         else if (equality == -1)
+        {
+            printf("COMMIT GITHUB");
             return false;
-
+        }
         else
             printf("enter YES / NO\n");
     }

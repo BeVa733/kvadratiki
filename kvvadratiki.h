@@ -19,17 +19,24 @@ enum coefficient_numbers
 
 double const LOW_NUMBER = 10e-5;
 
+struct coeff_identification
+{
+    char litera[3];
+    enum coefficient_numbers number[3];
+};
+
 struct test_data
-     {                                       
-         double test_coefficients[3];
-         double test_solutions[2];
-         double correct_solutions[2];
-         enum possible_outcomes test_type_output;
-         enum possible_outcomes correct_type_output;
-     };
+{
+    double test_coefficients[3];
+    double test_solutions[2];
+    double correct_solutions[2];
+    enum possible_outcomes test_type_output;
+    enum possible_outcomes correct_type_output;
+};
 
 
 int input_coefficients(double coefficients[]);
+bool input_one_coefficient(coeff_identification *identificators, int i, double *coefficients);
 void cleaning_buffer(void);
 
 enum possible_outcomes solve_equation(double *coefficients, double *solutions);
@@ -40,5 +47,6 @@ void test_solve_equation(void);
 bool check_solutions(double *test_solutions, double *correct_solutions);
 void output_received_solution(double *solutions, enum possible_outcomes type_output);
 bool get_users_answer (void);
+bool one_test(test_data *tests, int i);
 
 #endif

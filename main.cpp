@@ -31,7 +31,7 @@ int main()
 
         output_received_solution(solutions, type_output);
 
-        printf("Would you like to solve another equation?\nenter YES/NO\n");
+        printf("Would you like to solve another equation?\nenter YES / NO\n");
 
         need_repetition = get_users_answer();
 
