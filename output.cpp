@@ -4,11 +4,11 @@
 #include <string.h>
 #include "kvvadratiki.h"
 
-void output_received_solution(double *solutions, enum possible_outcomes type_output)
+void output_received_solution(double *solutions, enum possible_outcomes n_roots)
 {
     assert(solutions);
 
-    switch (type_output)
+    switch (n_roots)
     {
         case NO_SOLUTIONS:
             printf("This equation has no solutions.\n");
@@ -22,7 +22,7 @@ void output_received_solution(double *solutions, enum possible_outcomes type_out
         case MANY_SOLUTIONS:
             printf("This equation has an infinite number of solutions.\n");
             break;
-        case INCORRECT_INPUT:
+        case ERROR_SOLUTIONS:
             printf("incorrect coefficients have been introduced\n");
             break;
         default:
@@ -39,7 +39,7 @@ bool get_users_answer (void)
 
     while(true)
     {
-        int equality = 0;
+        enum type_answer users_answer = ANOTHER;
         char answer[LEN_STR];
 
         scanf("%s", answer);
@@ -48,25 +48,25 @@ bool get_users_answer (void)
         {
             if (strcmp(answer_yes[index], answer) == 0)
             {
-                equality = 1;
+                users_answer = YES;
                 break;
             }
             else if (strcmp(answer_no[index], answer) == 0)
             {
-                equality = -1;
+                users_answer = NO;
                 break;
             }
         }
 
-        if ( equality == 1)
+        if (users_answer == YES)
             return true;
 
-        else if (equality == -1)
+        else if (users_answer == NO)
         {
-            printf("COMMIT GITHUB");
             return false;
         }
         else
-            printf("enter YES / NO\n");
+            printf("Enter YES / NO\n");
     }
+    return 0;
 }

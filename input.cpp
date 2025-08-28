@@ -4,14 +4,13 @@
 #include <ctype.h>
 #include "kvvadratiki.h"
 
-
 int input_coefficients(double *coefficients)
 {
     assert(coefficients != 0);
 
-    struct coeff_identification identificators =
+    struct coeff_identification id =
     {
-        .litera =  {'a', 'b', 'c'},
+        .litera = {'a', 'b', 'c'},
         .number = { A,   B,   C }
     };
 
@@ -20,7 +19,8 @@ int input_coefficients(double *coefficients)
     printf("enter the coefficients of the equation:\n");
     for (int i = 0; i<3; i++)
     {
-        is_input_incorrect = input_one_coefficient(&identificators, i, coefficients);
+        is_input_incorrect = input_one_coefficient(&id, i, coefficients);
+
         if (is_input_incorrect)
         {
             return false;
@@ -41,6 +41,7 @@ bool input_one_coefficient(struct coeff_identification *id, int i, double *coeff
         cleaning_buffer();
         return true;
     }
+    
     while ((ch = getchar()) != '\n')
     {
         if (!isblank(ch))

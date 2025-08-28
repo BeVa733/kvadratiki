@@ -67,7 +67,7 @@ enum possible_outcomes solve_square_equation(double *coefficients, double *solut
     else
     {
         solutions[0] = (fabs((-coefficients[B] + sqrt(discriminant)) / (2 * coefficients[A])) < LOW_NUMBER) ? 0 : (-coefficients[B] + sqrt(discriminant)) / (2 * coefficients[A]);
-        solutions[1] = (fabs((-coefficients[B] - sqrt(discriminant)) / (2 * coefficients[A])) < LOW_NUMBER) ? 0 : (-coefficients[B] - sqrt(discriminant)) / (2 * coefficients[A]);
+        solutions[1] = (fabs((-coefficients[B] - sqrt(discriminant)) / (2 * coefficients[A])) < LOW_NUMBER) ? 0 : (-coefficients[B] - sqrt(discriminant)) / (2 * coefficients[A]); //TODO func
         return TWO_SOLUTIONS;
     }
 }
