@@ -63,6 +63,7 @@ bool check_solutions(double *test_solutions, double *correct_solutions)
         if (!isnan(correct_solutions[i]) && !isnan(test_solutions[i]))
         {
             if (!(check_equal_zero(test_solutions[i] - correct_solutions[i])))
+
                 return false;
         }
         else if ((!isnan(correct_solutions[i]) && isnan(test_solutions[i])) || (isnan(correct_solutions[i]) && !isnan(test_solutions[i])))
@@ -70,5 +71,6 @@ bool check_solutions(double *test_solutions, double *correct_solutions)
             return false;
         }
     }
+    
     return true;
 }

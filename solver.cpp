@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
+
 #include "kvvadratiki.h"
 
 enum possible_outcomes solve_equation(double *coefficients, double *solutions)

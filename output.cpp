@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <assert.h>
 #include <string.h>
+
 #include "kvvadratiki.h"
 
 void output_received_solution(double *solutions, enum possible_outcomes n_roots)
@@ -59,14 +60,20 @@ bool get_users_answer (void)
         }
 
         if (users_answer == YES)
+        {
             return true;
+        }
 
         else if (users_answer == NO)
         {
             return false;
         }
+
         else
+        {
             printf("Enter YES / NO\n");
+        }
     }
+
     return 0;
 }

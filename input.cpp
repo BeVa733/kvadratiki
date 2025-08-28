@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <assert.h>
 #include <ctype.h>
+
 #include "kvvadratiki.h"
 
 int input_coefficients(double *coefficients)
@@ -41,7 +42,7 @@ bool input_one_coefficient(struct coeff_identification *id, int i, double *coeff
         cleaning_buffer();
         return true;
     }
-    
+
     while ((ch = getchar()) != '\n')
     {
         if (!isblank(ch))
