@@ -24,7 +24,7 @@ void output_received_solution(double *solutions, enum possible_outcomes n_roots)
             printf("This equation has an infinite number of solutions.\n");
             break;
         case ERROR_SOLUTIONS:
-            printf("incorrect coefficients have been introduced\n");
+            printf("%sincorrect coefficients have been introduce%s\n", RED, BASIS);
             break;
         default:
             printf("the program is broken......\n");
@@ -47,7 +47,7 @@ bool get_users_answer (void)
 
         for (int index = 0; index < LEN_STR; index++)
         {
-            if (strcmp(answer_yes[index], answer) == 0)
+            if (!strcmp(answer_yes[index], answer))
             {
                 users_answer = YES;
                 break;
@@ -71,7 +71,7 @@ bool get_users_answer (void)
 
         else
         {
-            printf("Enter YES / NO\n");
+            printf("Enter %sYES%s / %sNO%s\n", GREEN, BASIS, RED, BASIS);
         }
     }
 

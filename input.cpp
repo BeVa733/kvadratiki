@@ -7,18 +7,18 @@
 
 int input_coefficients(double *coefficients)
 {
-    assert(coefficients != 0);
+    assert(coefficients);
 
     struct coeff_identification id =
     {
-        .litera = {'a', 'b', 'c'},
-        .number = { A,   B,   C }
+        .literal = {'a', 'b', 'c'},
+        .number = { A_INDEX,   B_INDEX,   C_INDEX}
     };
 
     bool is_input_incorrect = false;
 
     printf("enter the coefficients of the equation:\n");
-    for (int i = 0; i<3; i++)
+    for (int i = 0; i < N_COEFFICIENTS; i++)
     {
         is_input_incorrect = input_one_coefficient(&id, i, coefficients);
 
@@ -35,7 +35,7 @@ bool input_one_coefficient(struct coeff_identification *id, int i, double *coeff
 {
     int ch = 0;
 
-    printf("%c = ", id->litera[i]);
+    printf("%c = ", id->literal[i]);
 
     if (scanf("%lf", &coefficients[id->number[i]]) != 1)
     {

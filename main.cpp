@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include <assert.h>
 #include <string.h>
-
 #include "kvvadratiki.h"
 
 int main()
@@ -29,20 +28,21 @@ int main()
 
         output_received_solution(solutions, n_roots);
 
-        printf("Would you like to solve another equation?\nEnter YES / NO\n");
+        printf("Would you like to solve another equation?\nEnter %sYES%s / %sNO%s\n", GREEN, BASIS, RED, BASIS);
 
         need_repetition = get_users_answer();
 
     } while (need_repetition);
 
-    printf("COMMIT GITHUB!");
+    printf("%sCOMMIT GITHUB!%s", PURPLE, BASIS);
 
     return 0;
 }
 
 void welcome(void)
 {
-    printf("MEOW\n"
-    "This program solves equations like ax^2+bx+c=0\n"
-    "Are you want to test program before?\nenter YES/NO\n");
+    printf("%sMEOW%s\n", PURPLE, BASIS);
+
+    printf("This program solves equations like ax^2+bx+c=0\n"
+    "Do you want to test the program before?\nenter %sYES%s/%sNO%s\n", GREEN, BASIS, RED, BASIS);
 }
